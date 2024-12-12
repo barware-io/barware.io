@@ -23,7 +23,7 @@ export function HeroSection({ favApps }: { favApps: AppType[] }) {
 
                     {/* App Showcase */}
                     <div className="relative">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full md:w-[750px] mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 w-full md:w-[750px] mx-auto">
                             <div className="col-span-1 max-w-[400px] w-full mx-auto">
                                 {(() => {
                                     const AppWrapper = favApps[0].isReady ? 'a' : 'div'
@@ -98,7 +98,7 @@ export function HeroSection({ favApps }: { favApps: AppType[] }) {
                                     )
                                 })()}
                             </div>
-                            <div className="col-span-1 md:col-span-2 flex justify-center mt-6 md:mt-8">
+                            <div className="col-span-1 md:col-span-2 flex justify-center mt-0 md:mt-8">
                                 <div className="max-w-[400px] w-full">
                                     {(() => {
                                         const AppWrapper = favApps[2].isReady ? 'a' : 'div'

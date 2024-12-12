@@ -4,7 +4,7 @@ import { Features } from "@/components/home/Features"
 import { About } from "@/components/home/About"
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
-import { apps, favApps } from "@/data/apps"
+import { favApps } from "@/data/apps"
 
 export default function Page() {
   return (

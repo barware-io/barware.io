@@ -1,7 +1,5 @@
 import { AppType } from "@/types"
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Download } from "lucide-react"
 
 export function HeroSection({ favApps }: { favApps: AppType[] }) {
     return (

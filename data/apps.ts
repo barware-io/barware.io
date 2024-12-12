@@ -10,7 +10,7 @@ export const apps: AppType[] = [
         description: "Your daily dose of cute cat GIFs in your Menu Bar.",
         color: "bg-[#FFE8E3]",
         appStoreLink: "https://apps.apple.com/app/catbar/id1644003590",
-        linkText: "Coming soon",
+        linkText: "Coming Soon",
         isReady: false,
         icon: catBarImage
     },
@@ -19,7 +19,7 @@ export const apps: AppType[] = [
         description: "Bookmarks in your Menu Bar.",
         color: "bg-[#FFE8E3]",
         appStoreLink: "#",
-        linkText: "Coming soon",
+        linkText: "Coming Soon",
         isReady: false,
         icon: barMarksImage
     },

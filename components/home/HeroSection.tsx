@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export function HeroSection({ favApps }: { favApps: AppType[] }) {
     return (
-        <section className="relative py-16 md:py-20">
+        <section className="relative py-16 md:py-20 overflow-hidden">
             {/* Gradient Background */}
             <div className="absolute inset-0 bg-gradient-to-b from-[#FFE8E3]/30 to-white"></div>
             
@@ -23,43 +23,120 @@ export function HeroSection({ favApps }: { favApps: AppType[] }) {
 
                     {/* App Showcase */}
                     <div className="relative">
-                        <div className="grid grid-cols-2 gap-4">
-                            {favApps.map((app, index) => {
-                                const AppWrapper = app.isReady ? 'a' : 'div'
-                                const wrapperProps = app.isReady ? {
-                                    href: app.appStoreLink,
-                                    target: "_blank",
-                                    rel: "noopener noreferrer"
-                                } : {}
-
-                                return (
-                                    <AppWrapper
-                                        key={index}
-                                        className={`relative bg-white p-8 rounded-3xl shadow-xl backdrop-blur-sm 
-                                            ${app.isReady ? 'cursor-pointer hover:scale-105 transition-transform' : ''}
-                                            ${index % 2 === 0 ? 'translate-y-8' : ''}`}
-                                        {...wrapperProps}
-                                    >
-                                        <div className="relative w-16 h-16 mb-4">
-                                            <Image
-                                                src={app.icon}
-                                                alt={`${app.name} icon`}
-                                                fill
-                                                className="object-contain"
-                                            />
-                                        </div>
-                                        <h3 className="font-semibold text-lg mb-2">{app.name}</h3>
-                                        <p className="text-sm text-gray-600">{app.description}</p>
-                                        {!app.isReady && (
-                                            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2">
-                                                <div className="ribbon">
-                                                    {app.linkText}
-                                                </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full md:w-[750px] mx-auto">
+                            <div className="col-span-1 max-w-[400px] w-full mx-auto">
+                                {(() => {
+                                    const AppWrapper = favApps[0].isReady ? 'a' : 'div'
+                                    const wrapperProps = favApps[0].isReady ? {
+                                        href: favApps[0].appStoreLink,
+                                        target: "_blank",
+                                        rel: "noopener noreferrer"
+                                    } : {}
+                                    
+                                    return (
+                                        <AppWrapper
+                                            className={`relative bg-white p-8 rounded-3xl shadow-xl backdrop-blur-sm w-full
+                                                ${favApps[0].isReady ? 'cursor-pointer hover:scale-105 transition-transform' : ''}`}
+                                            {...wrapperProps}
+                                        >
+                                            {/* First app content */}
+                                            <div className="relative w-16 h-16 mb-4">
+                                                <Image
+                                                    src={favApps[0].icon}
+                                                    alt={`${favApps[0].name} icon`}
+                                                    fill
+                                                    className="object-contain"
+                                                />
                                             </div>
-                                        )}
-                                    </AppWrapper>
-                                )
-                            })}
+                                            <h3 className="font-semibold text-lg mb-2">{favApps[0].name}</h3>
+                                            <p className="text-sm text-gray-600">{favApps[0].description}</p>
+                                            {!favApps[0].isReady && (
+                                                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2">
+                                                    <div className="ribbon bg-[#FF5D41] text-white px-4 py-1.5 rounded-lg text-xs">
+                                                        {favApps[0].linkText}
+                                                    </div>
+                                                </div>
+                                            )}
+                                        </AppWrapper>
+                                    )
+                                })()}
+                            </div>
+                            <div className="col-span-1 md:translate-y-8 max-w-[400px] w-full mx-auto">
+                                {(() => {
+                                    const AppWrapper = favApps[1].isReady ? 'a' : 'div'
+                                    const wrapperProps = favApps[1].isReady ? {
+                                        href: favApps[1].appStoreLink,
+                                        target: "_blank",
+                                        rel: "noopener noreferrer"
+                                    } : {}
+                                    
+                                    return (
+                                        <AppWrapper
+                                            className={`relative bg-white p-8 rounded-3xl shadow-xl backdrop-blur-sm 
+                                                ${favApps[1].isReady ? 'cursor-pointer hover:scale-105 transition-transform' : ''}`}
+                                            {...wrapperProps}
+                                        >
+                                            {/* Second app content */}
+                                            <div className="relative w-16 h-16 mb-4">
+                                                <Image
+                                                    src={favApps[1].icon}
+                                                    alt={`${favApps[1].name} icon`}
+                                                    fill
+                                                    className="object-contain"
+                                                />
+                                            </div>
+                                            <h3 className="font-semibold text-lg mb-2">{favApps[1].name}</h3>
+                                            <p className="text-sm text-gray-600">{favApps[1].description}</p>
+                                            {!favApps[1].isReady && (
+                                                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2">
+                                                    <div className="ribbon bg-[#FF5D41] text-white px-4 py-1.5 rounded-lg text-xs">
+                                                        {favApps[1].linkText}
+                                                    </div>
+                                                </div>
+                                            )}
+                                        </AppWrapper>
+                                    )
+                                })()}
+                            </div>
+                            <div className="col-span-1 md:col-span-2 flex justify-center mt-6 md:mt-8">
+                                <div className="max-w-[400px] w-full">
+                                    {(() => {
+                                        const AppWrapper = favApps[2].isReady ? 'a' : 'div'
+                                        const wrapperProps = favApps[2].isReady ? {
+                                            href: favApps[2].appStoreLink,
+                                            target: "_blank",
+                                            rel: "noopener noreferrer"
+                                        } : {}
+                                        
+                                        return (
+                                            <AppWrapper
+                                                className={`relative bg-white p-8 rounded-3xl shadow-xl backdrop-blur-sm 
+                                                    ${favApps[2].isReady ? 'cursor-pointer hover:scale-105 transition-transform' : ''}`}
+                                                {...wrapperProps}
+                                            >
+                                                {/* Third app content */}
+                                                <div className="relative w-16 h-16 mb-4">
+                                                    <Image
+                                                        src={favApps[2].icon}
+                                                        alt={`${favApps[2].name} icon`}
+                                                        fill
+                                                        className="object-contain"
+                                                    />
+                                                </div>
+                                                <h3 className="font-semibold text-lg mb-2">{favApps[2].name}</h3>
+                                                <p className="text-sm text-gray-600">{favApps[2].description}</p>
+                                                {!favApps[2].isReady && (
+                                                    <div className="absolute -bottom-3 left-1/2 -translate-x-1/2">
+                                                        <div className="ribbon bg-[#FF5D41] text-white px-4 py-1.5 rounded-lg text-xs">
+                                                            {favApps[2].linkText}
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </AppWrapper>
+                                        )
+                                    })()}
+                                </div>
+                            </div>
                         </div>
 
                         {/* Decorative Elements */}

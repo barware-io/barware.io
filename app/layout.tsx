@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Barware.io - Innovative MacOS MenuBar Applications",
+  title: "Barware.io - Pouring Innovationinto into MacOS.",
   description: "Discover a collection of powerful MenuBar applications designed to enhance your Mac experience.",
 }
 

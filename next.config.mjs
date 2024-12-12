@@ -2,7 +2,7 @@
 
 const isProd = process.env.NODE_ENV === 'production';
 
-const repositoryName = 'repository-name'; // Replace with your GitHub repository name
+const repositoryName = 'barware.io'; // Replace with your actual repository name
 
 const nextConfig = {
   basePath: isProd ? `/${repositoryName}` : '',

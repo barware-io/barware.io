@@ -1,9 +1,11 @@
 import { StaticImageData } from "next/image"
 
-export type AppType = {
+export interface AppType {
   name: string
   description: string
   color: string
   appStoreLink: string
-  icon: StaticImageData
+  linkText?: string
+  isReady: boolean
+  icon: any
 } 

@@ -80,3 +80,17 @@ html {
   animation: float 3s ease-in-out infinite;
 }
 
+.clip-corner {
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+.ribbon {
+    padding: 4px 8px;
+    background: #FF5D41;
+    color: white;
+    font-size: 11px;
+    font-weight: 500;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+

@@ -1,28 +1,22 @@
+import { apps } from "@/data/apps"
 import { AppCard } from "./AppCard"
-import { AppType } from "@/types"
-import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
-import Link from "next/link"
 
-export function AppShowcase({ apps }: { apps: AppType[] }) {
-  return (
-    <section id="apps" className="container mx-auto px-4 py-20">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold mb-4">Our Belowed Apps</h2>
-        <p className="text-gray-600">These are the apps that are loved by our users</p>
-      </div>
-      <div className="grid md:grid-cols-3 gap-8">
-        {apps.map((app, index) => (
-          <AppCard key={index} app={app} />
-        ))}
-      </div>
-      <div className="text-center mt-12">
-        <Link href="/apps">
-          <Button className="bg-[#FF5D41] hover:bg-[#ff4724] text-white rounded-full h-12 px-8">
-            View All Apps <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-        </Link>
-      </div>
-    </section>
-  )
+export function AppShowcase() {
+    return (
+        <section className="container py-8 space-y-6">
+            <div className="text-center space-y-2">
+                <h2 className="text-2xl font-semibold tracking-tight">
+                    Our beloved apps
+                </h2>
+                <p className="text-muted-foreground">
+                    Check out our collection of apps designed to enhance your productivity
+                </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {apps.map((app) => (
+                    <AppCard key={app.name} app={app} />
+                ))}
+            </div>
+        </section>
+    )
 } 

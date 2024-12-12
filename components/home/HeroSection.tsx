@@ -1,9 +1,17 @@
+'use client'
+
 import { AppType } from "@/types"
 import Image from "next/image"
 import { Button } from "../ui/button"
 import { Download } from "lucide-react"
 
 export function HeroSection({ favApps }: { favApps: AppType[] }) {
+    const handleAppClick = (app: AppType) => {
+        if (app.isReady) {
+            window.open(app.appStoreLink, '_blank', 'noopener,noreferrer')
+        }
+    }
+
     return (
         <section className="relative py-16 md:py-20 overflow-hidden">
             {/* Gradient Background */}
@@ -28,18 +36,11 @@ export function HeroSection({ favApps }: { favApps: AppType[] }) {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 w-full md:w-[750px] mx-auto">
                             <div className="col-span-1 max-w-[400px] w-full mx-auto">
                                 {(() => {
-                                    const AppWrapper = favApps[0].isReady ? 'a' : 'div'
-                                    const wrapperProps = favApps[0].isReady ? {
-                                        href: favApps[0].appStoreLink,
-                                        target: "_blank",
-                                        rel: "noopener noreferrer"
-                                    } : {}
-                                    
                                     return (
-                                        <AppWrapper
+                                        <div
                                             className={`relative bg-white p-8 rounded-3xl shadow-xl backdrop-blur-sm w-full
-                                                ${favApps[0].isReady ? 'cursor-pointer' : ''}`}
-                                            {...wrapperProps}
+                                                ${favApps[0].isReady ? 'cursor-pointer hover:scale-105 transition-transform' : ''}`}
+                                            onClick={() => handleAppClick(favApps[0])}
                                         >
                                             <div className="relative w-16 h-16 mb-4">
                                                 <Image
@@ -50,39 +51,25 @@ export function HeroSection({ favApps }: { favApps: AppType[] }) {
                                                 />
                                             </div>
                                             <h3 className="font-semibold text-lg mb-2">{favApps[0].name}</h3>
-                                            <p className="text-sm text-gray-600 mb-4">{favApps[0].description}</p>
-                                            {favApps[0].isReady ? (
-                                                <Button 
-                                                    className="w-full bg-[#0066CC] hover:bg-[#0066CC]/90 rounded-full"
-                                                >
-                                                    <Download className="mr-2 h-4 w-4" />
-                                                    Get on App Store
-                                                </Button>
-                                            ) : (
+                                            <p className="text-sm text-gray-600">{favApps[0].description}</p>
+                                            {!favApps[0].isReady && (
                                                 <div className="absolute -bottom-3 left-1/2 -translate-x-1/2">
                                                     <div className="ribbon bg-[#FF5D41] text-white px-4 py-1.5 rounded-lg text-xs">
                                                         {favApps[0].linkText}
                                                     </div>
                                                 </div>
                                             )}
-                                        </AppWrapper>
+                                        </div>
                                     )
                                 })()}
                             </div>
                             <div className="col-span-1 md:translate-y-8 max-w-[400px] w-full mx-auto">
                                 {(() => {
-                                    const AppWrapper = favApps[1].isReady ? 'a' : 'div'
-                                    const wrapperProps = favApps[1].isReady ? {
-                                        href: favApps[1].appStoreLink,
-                                        target: "_blank",
-                                        rel: "noopener noreferrer"
-                                    } : {}
-                                    
                                     return (
-                                        <AppWrapper
+                                        <div
                                             className={`relative bg-white p-8 rounded-3xl shadow-xl backdrop-blur-sm 
                                                 ${favApps[1].isReady ? 'cursor-pointer hover:scale-105 transition-transform' : ''}`}
-                                            {...wrapperProps}
+                                            onClick={() => handleAppClick(favApps[1])}
                                         >
                                             <div className="relative w-16 h-16 mb-4">
                                                 <Image
@@ -101,25 +88,18 @@ export function HeroSection({ favApps }: { favApps: AppType[] }) {
                                                     </div>
                                                 </div>
                                             )}
-                                        </AppWrapper>
+                                        </div>
                                     )
                                 })()}
                             </div>
                             <div className="col-span-1 md:col-span-2 flex justify-center">
                                 <div className="max-w-[400px] w-full">
                                     {(() => {
-                                        const AppWrapper = favApps[2].isReady ? 'a' : 'div'
-                                        const wrapperProps = favApps[2].isReady ? {
-                                            href: favApps[2].appStoreLink,
-                                            target: "_blank",
-                                            rel: "noopener noreferrer"
-                                        } : {}
-                                        
                                         return (
-                                            <AppWrapper
+                                            <div
                                                 className={`relative bg-white p-8 rounded-3xl shadow-xl backdrop-blur-sm 
                                                     ${favApps[2].isReady ? 'cursor-pointer hover:scale-105 transition-transform' : ''}`}
-                                                {...wrapperProps}
+                                                onClick={() => handleAppClick(favApps[2])}
                                             >
                                                 <div className="relative w-16 h-16 mb-4">
                                                     <Image
@@ -138,7 +118,7 @@ export function HeroSection({ favApps }: { favApps: AppType[] }) {
                                                         </div>
                                                     </div>
                                                 )}
-                                            </AppWrapper>
+                                            </div>
                                         )
                                     })()}
                                 </div>

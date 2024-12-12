@@ -48,9 +48,9 @@ export const favApps = [
         name: "CatBar",
         description: "Your daily dose of cute cat GIFs in your Menu Bar.",
         color: "bg-[#FFE8E3]",
-        appStoreLink: "#",
+        appStoreLink: "https://example.com",
         linkText: "Coming Soon",
-        isReady: false,
+        isReady: true,
         icon: catBarImage
     },
     {

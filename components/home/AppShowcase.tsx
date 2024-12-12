@@ -3,7 +3,7 @@ import { AppCard } from "./AppCard"
 
 export function AppShowcase() {
     return (
-        <section className="py-24">
+        <section className="container mx-auto px-4 py-20" id="apps">
             <div className="text-center space-y-4 mb-12">
                 <h2 className="text-4xl font-bold tracking-tight">
                     Our Apps

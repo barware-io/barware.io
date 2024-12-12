@@ -11,11 +11,6 @@ export function Header() {
           <Link href="/#features" className="text-gray-600 hover:text-gray-900">Features</Link>
           <Link href="/#about" className="text-gray-600 hover:text-gray-900">About</Link>
         </div>
-        <Link href="/#apps">
-          <Button className="bg-[#FF5D41] hover:bg-[#ff4724] text-white rounded-full">
-            Explore Apps
-          </Button>
-        </Link>
       </nav>
     </header>
   )

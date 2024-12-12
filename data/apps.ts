@@ -34,7 +34,7 @@ export const apps: AppType[] = [
     },
     {
         name: "BarTacToe",
-        description: "Challenge the computer to a game of Tic-Tac-Toe.",
+        description: "Challenge the computer to a game of Tic-Tac-Toe in your Menu Bar.",
         color: "bg-[#FFE8E3]",
         appStoreLink: "#",
         linkText: "Coming Soon",

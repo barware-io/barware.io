@@ -1,15 +1,12 @@
 import { AppType } from "@/types"
-import { Button } from "../ui/button"
-import { Card } from "../ui/card"
 import Image from "next/image"
+import { Button } from "../ui/button"
 import { Download } from "lucide-react"
 
-interface AppCardProps {
-    app: AppType
-}
+export function AppCard({ app }: { app: AppType }) {
+    if (!app) return null
 
-export function AppCard({ app }: AppCardProps) {
-    const CardWrapper = app.isReady ? 'a' : 'div'
+    const AppWrapper = app.isReady ? 'a' : 'div'
     const wrapperProps = app.isReady ? {
         href: app.appStoreLink,
         target: "_blank",
@@ -17,48 +14,35 @@ export function AppCard({ app }: AppCardProps) {
     } : {}
 
     return (
-        <CardWrapper
-            className={`block group ${app.isReady ? 'cursor-pointer' : ''}`}
+        <AppWrapper
+            className={`relative bg-white p-8 rounded-3xl shadow-xl backdrop-blur-sm 
+                ${app.isReady ? 'cursor-pointer hover:scale-105 transition-transform' : ''}`}
             {...wrapperProps}
         >
-            <Card className="relative overflow-hidden border-0 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
-                <div className={`${app.color} p-8 ${!app.isReady ? 'opacity-75' : ''}`}>
-                    <div className="relative w-16 h-16 mx-auto group-hover:scale-110 transition-transform duration-300">
-                        <Image
-                            src={app.icon}
-                            alt={app.name}
-                            fill
-                            className={`object-contain ${!app.isReady ? 'grayscale-[30%]' : ''}`}
-                        />
+            <div className="relative w-16 h-16 mb-4">
+                <Image
+                    src={app.icon}
+                    alt={`${app.name} icon`}
+                    fill
+                    className="object-contain"
+                />
+            </div>
+            <h3 className="font-semibold text-lg mb-2">{app.name}</h3>
+            <p className="text-sm text-gray-600 mb-4">{app.description}</p>
+            {app.isReady ? (
+                <Button 
+                    className="w-full bg-[#0066CC] hover:bg-[#0066CC]/90 rounded-full"
+                >
+                    <Download className="mr-2 h-4 w-4" />
+                    Get on App Store
+                </Button>
+            ) : (
+                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2">
+                    <div className="ribbon bg-[#FF5D41] text-white px-4 py-1.5 rounded-lg text-xs">
+                        {app.linkText}
                     </div>
                 </div>
-                <div className="p-8 space-y-4 text-center flex-1 flex flex-col">
-                    <div className="space-y-2 flex-1">
-                        <h3 className="text-xl font-semibold">{app.name}</h3>
-                        <p className="text-gray-600">
-                            {app.description}
-                        </p>
-                    </div>
-                    <Button 
-                        variant={app.isReady ? "default" : "secondary"}
-                        className={`rounded-full w-full ${
-                            app.isReady 
-                                ? 'bg-[#FF5D41] hover:bg-[#FF5D41]/90' 
-                                : 'bg-gray-100 text-gray-500 hover:bg-gray-200 cursor-not-allowed'
-                        }`}
-                        disabled={!app.isReady}
-                    >
-                        {app.isReady ? (
-                            <>
-                                <Download className="mr-2 h-4 w-4" />
-                                Get on App Store
-                            </>
-                        ) : (
-                            app.linkText
-                        )}
-                    </Button>
-                </div>
-            </Card>
-        </CardWrapper>
+            )}
+        </AppWrapper>
     )
-} 
+}

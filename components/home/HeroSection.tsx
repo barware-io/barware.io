@@ -1,5 +1,7 @@
 import { AppType } from "@/types"
 import Image from "next/image"
+import { Button } from "../ui/button"
+import { Download } from "lucide-react"
 
 export function HeroSection({ favApps }: { favApps: AppType[] }) {
     return (
@@ -36,10 +38,9 @@ export function HeroSection({ favApps }: { favApps: AppType[] }) {
                                     return (
                                         <AppWrapper
                                             className={`relative bg-white p-8 rounded-3xl shadow-xl backdrop-blur-sm w-full
-                                                ${favApps[0].isReady ? 'cursor-pointer hover:scale-105 transition-transform' : ''}`}
+                                                ${favApps[0].isReady ? 'cursor-pointer' : ''}`}
                                             {...wrapperProps}
                                         >
-                                            {/* First app content */}
                                             <div className="relative w-16 h-16 mb-4">
                                                 <Image
                                                     src={favApps[0].icon}
@@ -49,8 +50,15 @@ export function HeroSection({ favApps }: { favApps: AppType[] }) {
                                                 />
                                             </div>
                                             <h3 className="font-semibold text-lg mb-2">{favApps[0].name}</h3>
-                                            <p className="text-sm text-gray-600">{favApps[0].description}</p>
-                                            {!favApps[0].isReady && (
+                                            <p className="text-sm text-gray-600 mb-4">{favApps[0].description}</p>
+                                            {favApps[0].isReady ? (
+                                                <Button 
+                                                    className="w-full bg-[#0066CC] hover:bg-[#0066CC]/90 rounded-full"
+                                                >
+                                                    <Download className="mr-2 h-4 w-4" />
+                                                    Get on App Store
+                                                </Button>
+                                            ) : (
                                                 <div className="absolute -bottom-3 left-1/2 -translate-x-1/2">
                                                     <div className="ribbon bg-[#FF5D41] text-white px-4 py-1.5 rounded-lg text-xs">
                                                         {favApps[0].linkText}
@@ -76,7 +84,6 @@ export function HeroSection({ favApps }: { favApps: AppType[] }) {
                                                 ${favApps[1].isReady ? 'cursor-pointer hover:scale-105 transition-transform' : ''}`}
                                             {...wrapperProps}
                                         >
-                                            {/* Second app content */}
                                             <div className="relative w-16 h-16 mb-4">
                                                 <Image
                                                     src={favApps[1].icon}
@@ -98,7 +105,7 @@ export function HeroSection({ favApps }: { favApps: AppType[] }) {
                                     )
                                 })()}
                             </div>
-                            <div className="col-span-1 md:col-span-2 flex justify-center mt-0 md:mt-8">
+                            <div className="col-span-1 md:col-span-2 flex justify-center">
                                 <div className="max-w-[400px] w-full">
                                     {(() => {
                                         const AppWrapper = favApps[2].isReady ? 'a' : 'div'
@@ -114,7 +121,6 @@ export function HeroSection({ favApps }: { favApps: AppType[] }) {
                                                     ${favApps[2].isReady ? 'cursor-pointer hover:scale-105 transition-transform' : ''}`}
                                                 {...wrapperProps}
                                             >
-                                                {/* Third app content */}
                                                 <div className="relative w-16 h-16 mb-4">
                                                     <Image
                                                         src={favApps[2].icon}

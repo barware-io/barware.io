@@ -29,7 +29,7 @@ export const apps: AppType[] = [
         color: "bg-[#FFE8E3]",
         appStoreLink: "#",
         linkText: "Coming Soon",
-        isReady: false,
+        isReady: true,
         icon: dogBarImage
     },
     {

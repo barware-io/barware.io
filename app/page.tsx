@@ -11,8 +11,8 @@ export default function Page() {
     <div className="min-h-screen bg-[#FDFCFC]">
       <Header />
       <HeroSection favApps={favApps} />
-      <AppShowcase apps={apps} />
       <Features />
+      <AppShowcase />
       <About />
       <Footer />
     </div>

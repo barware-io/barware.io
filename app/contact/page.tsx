@@ -18,7 +18,7 @@ export default function Contact() {
           </div>
 
           <div className="bg-white p-8 rounded-2xl shadow-sm">
-            <form className="space-y-6">
+            <form className="space-y-6" action="https://formcarry.com/s/jxOt-rrrCcG" method="POST">
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                   Email Address

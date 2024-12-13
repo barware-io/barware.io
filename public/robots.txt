@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://barware.io/sitemap.xml 

@@ -5,7 +5,8 @@ export interface AppType {
   description: string
   color: string
   appStoreLink: string
-  linkText?: string
+  linkText: string
   isReady: boolean
   icon: any
+  slug: string
 } 

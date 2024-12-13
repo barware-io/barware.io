@@ -2,6 +2,16 @@ import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import { AppCard } from "@/components/home/AppCard"
 import { apps } from "@/data/apps"
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Apps | Barware.io',
+  description: 'Discover our collection of useful menu bar apps for your Mac. Simple, efficient tools that live in your menubar.',
+  openGraph: {
+    title: 'Mac Menu Bar Apps | Barware.io',
+    description: 'Discover our collection of useful menu bar apps for your Mac. Simple, efficient tools that live in your menubar.',
+  }
+}
 
 export default function Apps() {
   return (

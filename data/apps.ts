@@ -9,10 +9,11 @@ export const apps: AppType[] = [
         name: "CatBar",
         description: "Your daily dose of cute cat GIFs in your Menu Bar.",
         color: "bg-[#FFE8E3]",
-        appStoreLink: "https://apps.apple.com/app/catbar/id1644003590",
+        appStoreLink: "#",
         linkText: "Coming Soon",
         isReady: false,
-        icon: catBarImage
+        icon: catBarImage,
+        slug: "catbar"
     },
     {
         name: "BarMarks",
@@ -21,7 +22,8 @@ export const apps: AppType[] = [
         appStoreLink: "#",
         linkText: "Coming Soon",
         isReady: false,
-        icon: barMarksImage
+        icon: barMarksImage,
+        slug: "barmarks"
     },
     {
         name: "DogBar",
@@ -30,7 +32,8 @@ export const apps: AppType[] = [
         appStoreLink: "#",
         linkText: "Coming Soon",
         isReady: false,
-        icon: dogBarImage
+        icon: dogBarImage,
+        slug: "dogbar"
     },
     {
         name: "BarTacToe",
@@ -39,7 +42,8 @@ export const apps: AppType[] = [
         appStoreLink: "#",
         linkText: "Coming Soon",
         isReady: false,
-        icon: barTactoeImage
+        icon: barTactoeImage,
+        slug: "bartactoe"
     },
 ]
 
@@ -51,7 +55,8 @@ export const favApps = [
         appStoreLink: "https://example.com",
         linkText: "Coming Soon",
         isReady: false,
-        icon: catBarImage
+        icon: catBarImage,
+        slug: "catbar"
     },
     {
         name: "BarMarks",
@@ -60,7 +65,8 @@ export const favApps = [
         appStoreLink: "#",
         linkText: "Coming Soon",
         isReady: false,
-        icon: barMarksImage
+        icon: barMarksImage,
+        slug: "barmarks"
     },
     {
         name: "DogBar",
@@ -69,6 +75,7 @@ export const favApps = [
         appStoreLink: "#",
         linkText: "Coming Soon",
         isReady: false,
-        icon: dogBarImage
+        icon: dogBarImage,
+        slug: "dogbar"
     }
 ] 

@@ -9,6 +9,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
     path: isProd ? `/_next/image` : '',
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 60,
   },
 };
 

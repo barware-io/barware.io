@@ -1,38 +1,74 @@
-import type { Metadata } from 'next'
+import { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import './globals.css'
+import '../styles/globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
-  title: 'barware.io',
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Barware.io',
+  url: 'https://barware.io',
   description: 'Menu bar apps for your Mac',
-  icons: {
-    icon: [
+  author: {
+    '@type': 'Person',
+    name: 'Orkhan Farmanli'
+  },
+  publisher: {
+    '@type': 'Person',
+    name: 'Orkhan Farmanli'
+  },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://barware.io/apps?q={search_term_string}',
+    'query-input': 'required name=search_term_string'
+  }
+}
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://barware.io'),
+  title: {
+    default: 'Barware.io',
+    template: '%s | Barware.io'
+  },
+  description: 'Menu bar apps for your Mac',
+  keywords: ['barware', 'barware.io', 'menu bar apps', 'mac apps', 'macos', 'menubar'],
+  authors: [{ name: 'Orkhan Farmanli' }],
+  creator: 'Orkhan Farmanli',
+  publisher: 'Orkhan Farmanli',
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://barware.io',
+    siteName: 'barware.io',
+    title: 'barware.io',
+    description: 'Menu bar apps for your Mac',
+    images: [
       {
-        url: '/assets/favicon/favicon.ico',
-        sizes: 'any',
-      },
-      {
-        url: '/assets/favicon/favicon-16x16.png',
-        sizes: '16x16',
-        type: 'image/png',
-      },
-      {
-        url: '/assets/favicon/favicon-32x32.png',
-        sizes: '32x32',
-        type: 'image/png',
-      }
-    ],
-    apple: [
-      {
-        url: '/assets/favicon/apple-touch-icon.png',
-        sizes: '180x180',
-        type: 'image/png',
+        url: 'https://barware.io/assets/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Barware.io - Menu bar apps for your Mac',
       },
     ],
   },
-  manifest: '/assets/favicon/site.webmanifest',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'barware.io',
+    description: 'Menu bar apps for your Mac',
+    creator: '@orkhanfarmanli',
+    images: ['https://barware.io/assets/og-image.png'],
+  },
+  other: {
+    'schema:jsonLd': JSON.stringify(jsonLd)
+  },
+  alternates: {
+    canonical: 'https://barware.io'
+  }
 }
 
 export default function RootLayout({
@@ -42,7 +78,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} overflow-x-hidden`}>{children}</body>
+      <head>
+        <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+      </head>
+      <body className={inter.className}>
+        {children}
+      </body>
     </html>
   )
 }

@@ -35,8 +35,8 @@ export const apps: AppType[] = [
         requirements: {
             os: "macOS 13.0 or later",
             processor: "Apple Silicon or Intel processor",
-            memory: "50 MB",
-            storage: "50 MB available space"
+            memory: "~50 MB",
+            storage: "2 MB available space"
         },
         screenshots: [], // Add screenshots when available
         pricing: {

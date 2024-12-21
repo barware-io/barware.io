@@ -119,17 +119,6 @@ export default function AppPage({ params }: Props) {
           </div>
         </section>
 
-        <section className="mb-12">
-          <div className="flex justify-center">
-            <Link 
-              href={`/apps/${app.slug}/privacy`}
-              className="text-gray-600 hover:text-gray-900 text-sm"
-            >
-              Privacy Policy
-            </Link>
-          </div>
-        </section>
-
         {app.pricing && (
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-6">Pricing</h2>
@@ -146,6 +135,30 @@ export default function AppPage({ params }: Props) {
             </div>
           </section>
         )}
+
+        <section className="mb-12">
+          <div className="flex justify-center">
+            <Link 
+              href={`/apps/${app.slug}/privacy`}
+              className="flex items-center gap-2 text-gray-600 hover:text-[#FF5D41] transition-colors px-4 py-2 rounded-full border border-gray-200 hover:border-[#FF5D41]"
+            >
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="16" 
+                height="16" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+              </svg>
+              Privacy Policy
+            </Link>
+          </div>
+        </section>
       </div>
     </main>
   )

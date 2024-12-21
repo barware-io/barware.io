@@ -246,7 +246,7 @@ export const apps: AppType[] = [
     },
 ]
 
-export const favApps = apps.slice(0, 3).map(app => ({
+export const favApps = apps.map(app => ({
     name: app.name,
     description: app.description,
     color: app.color,

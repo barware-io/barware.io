@@ -1,11 +1,21 @@
 'use client'
 
-import { AppType } from "@/types"
-import Image from "next/image"
+import Image, { StaticImageData } from "next/image"
 import Link from 'next/link'
 import { motion } from "framer-motion"
 
-export function HeroSection({ favApps }: { favApps: AppType[] }) {
+type SimplifiedAppType = {
+  name: string
+  description: string
+  color: string
+  appStoreLink: string
+  linkText: string
+  isReady: boolean
+  icon: StaticImageData
+  slug: string
+}
+
+export function HeroSection({ favApps }: { favApps: SimplifiedAppType[] }) {
     return (
         <section className="relative py-16 md:py-24 overflow-hidden">
             {/* Background Elements */}

@@ -18,7 +18,7 @@ export default function PrivacyPage() {
             <h2 className="text-xl font-semibold mb-4">Our Approach to Privacy</h2>
             <div className="space-y-4">
               <p className="text-gray-700">
-                At Barware, we believe in absolute privacy and data minimalism. We don't collect, store, or process any personal information from our users.
+                At Barware, we believe in absolute privacy and data minimalism. We don&apos;t collect, store, or process any personal information from our users.
               </p>
             </div>
           </section>
@@ -27,7 +27,7 @@ export default function PrivacyPage() {
             <h2 className="text-xl font-semibold mb-4">Data Collection</h2>
             <div className="space-y-4">
               <p className="text-gray-700">
-                Our apps are designed to work entirely on your device. We don't:
+                Our apps are designed to work entirely on your device. We don&apos;t:
               </p>
               <ul className="list-disc pl-6 space-y-2 text-gray-700">
                 <li>Collect personal information</li>
@@ -43,7 +43,7 @@ export default function PrivacyPage() {
             <h2 className="text-xl font-semibold mb-4">Our Apps</h2>
             <div className="space-y-4">
               <p className="text-gray-700">
-                Each of our apps has its own privacy policy that details any app-specific privacy considerations. You can find these policies on each app's dedicated page.
+                Each of our apps has its own privacy policy that details any app-specific privacy considerations. You can find these policies on each app&apos;s dedicated page.
               </p>
             </div>
           </section>

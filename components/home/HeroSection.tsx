@@ -2,6 +2,7 @@
 
 import { AppType } from "@/types"
 import Image from "next/image"
+import Link from 'next/link'
 
 export function HeroSection({ favApps }: { favApps: AppType[] }) {
     const handleAppClick = (app: AppType) => {
@@ -32,95 +33,26 @@ export function HeroSection({ favApps }: { favApps: AppType[] }) {
                     {/* App Showcase */}
                     <div className="relative">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 w-full md:w-[750px] mx-auto">
-                            <div className="col-span-1 max-w-[400px] w-full mx-auto">
-                                {(() => {
-                                    return (
-                                        <div
-                                            className={`relative bg-white p-8 rounded-3xl shadow-xl backdrop-blur-sm w-full
-                                                ${favApps[0].isReady ? 'cursor-pointer hover:scale-105 transition-transform' : ''}`}
-                                            onClick={() => handleAppClick(favApps[0])}
-                                        >
-                                            <div className="relative w-16 h-16 mb-4">
-                                                <Image
-                                                    src={favApps[0].icon}
-                                                    alt={`${favApps[0].name} icon`}
-                                                    fill
-                                                    className="object-contain"
-                                                />
-                                            </div>
-                                            <h3 className="font-semibold text-lg mb-2">{favApps[0].name}</h3>
-                                            <p className="text-sm text-gray-600">{favApps[0].description}</p>
-                                            {!favApps[0].isReady && (
-                                                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2">
-                                                    <div className="ribbon bg-[#FF5D41] text-white px-4 py-1.5 rounded-lg text-xs">
-                                                        {favApps[0].linkText}
-                                                    </div>
-                                                </div>
-                                            )}
+                            {favApps.map((app, index) => (
+                                <Link 
+                                    key={index} 
+                                    href={`/apps/${app.slug}`}
+                                    className="block transform hover:scale-105 transition-transform"
+                                >
+                                    <div className="bg-white rounded-3xl p-6 shadow-lg">
+                                        <div className="relative w-12 h-12 mb-4">
+                                            <Image
+                                                src={app.icon}
+                                                alt={app.name}
+                                                fill
+                                                className="object-contain"
+                                            />
                                         </div>
-                                    )
-                                })()}
-                            </div>
-                            <div className="col-span-1 md:translate-y-8 max-w-[400px] w-full mx-auto">
-                                {(() => {
-                                    return (
-                                        <div
-                                            className={`relative bg-white p-8 rounded-3xl shadow-xl backdrop-blur-sm 
-                                                ${favApps[1].isReady ? 'cursor-pointer hover:scale-105 transition-transform' : ''}`}
-                                            onClick={() => handleAppClick(favApps[1])}
-                                        >
-                                            <div className="relative w-16 h-16 mb-4">
-                                                <Image
-                                                    src={favApps[1].icon}
-                                                    alt={`${favApps[1].name} icon`}
-                                                    fill
-                                                    className="object-contain"
-                                                />
-                                            </div>
-                                            <h3 className="font-semibold text-lg mb-2">{favApps[1].name}</h3>
-                                            <p className="text-sm text-gray-600">{favApps[1].description}</p>
-                                            {!favApps[1].isReady && (
-                                                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2">
-                                                    <div className="ribbon bg-[#FF5D41] text-white px-4 py-1.5 rounded-lg text-xs">
-                                                        {favApps[1].linkText}
-                                                    </div>
-                                                </div>
-                                            )}
-                                        </div>
-                                    )
-                                })()}
-                            </div>
-                            <div className="col-span-1 md:col-span-2 flex justify-center">
-                                <div className="max-w-[400px] w-full">
-                                    {(() => {
-                                        return (
-                                            <div
-                                                className={`relative bg-white p-8 rounded-3xl shadow-xl backdrop-blur-sm 
-                                                    ${favApps[2].isReady ? 'cursor-pointer hover:scale-105 transition-transform' : ''}`}
-                                                onClick={() => handleAppClick(favApps[2])}
-                                            >
-                                                <div className="relative w-16 h-16 mb-4">
-                                                    <Image
-                                                        src={favApps[2].icon}
-                                                        alt={`${favApps[2].name} icon`}
-                                                        fill
-                                                        className="object-contain"
-                                                    />
-                                                </div>
-                                                <h3 className="font-semibold text-lg mb-2">{favApps[2].name}</h3>
-                                                <p className="text-sm text-gray-600">{favApps[2].description}</p>
-                                                {!favApps[2].isReady && (
-                                                    <div className="absolute -bottom-3 left-1/2 -translate-x-1/2">
-                                                        <div className="ribbon bg-[#FF5D41] text-white px-4 py-1.5 rounded-lg text-xs">
-                                                            {favApps[2].linkText}
-                                                        </div>
-                                                    </div>
-                                                )}
-                                            </div>
-                                        )
-                                    })()}
-                                </div>
-                            </div>
+                                        <h3 className="font-semibold mb-2">{app.name}</h3>
+                                        <p className="text-sm text-gray-600">{app.description}</p>
+                                    </div>
+                                </Link>
+                            ))}
                         </div>
 
                         {/* Decorative Elements */}

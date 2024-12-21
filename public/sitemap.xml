@@ -2,41 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://barware.io</loc>
-    <lastmod>2024-12-21T17:35:14.600Z</lastmod>
+    <lastmod>2024-12-21T17:38:49.745Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://barware.io/apps</loc>
-    <lastmod>2024-12-21T17:35:14.600Z</lastmod>
+    <lastmod>2024-12-21T17:38:49.745Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://barware.io/apps/catbar</loc>
-    <lastmod>2024-12-21T17:35:14.600Z</lastmod>
+    <lastmod>2024-12-21T17:38:49.745Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://barware.io/apps/barmarks</loc>
-    <lastmod>2024-12-21T17:35:14.600Z</lastmod>
+    <lastmod>2024-12-21T17:38:49.745Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://barware.io/apps/dogbar</loc>
-    <lastmod>2024-12-21T17:35:14.600Z</lastmod>
+    <lastmod>2024-12-21T17:38:49.745Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://barware.io/apps/bartactoe</loc>
-    <lastmod>2024-12-21T17:35:14.600Z</lastmod>
+    <lastmod>2024-12-21T17:38:49.745Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

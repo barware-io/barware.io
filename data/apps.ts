@@ -44,7 +44,7 @@ export const apps: AppType[] = [
             type: "one-time"
         },
         privacyPolicy: {
-            lastUpdated: "March 15, 2024",
+            lastUpdated: "Dec 20, 2024",
             sections: [
                 {
                     title: "Information We Don't Collect",
@@ -102,7 +102,7 @@ export const apps: AppType[] = [
             type: "one-time"
         },
         privacyPolicy: {
-            lastUpdated: "March 15, 2024",
+            lastUpdated: "Dec 20, 2024",
             sections: [
                 {
                     title: "Information We Don't Collect",
@@ -167,7 +167,7 @@ export const apps: AppType[] = [
             type: "one-time"
         },
         privacyPolicy: {
-            lastUpdated: "March 15, 2024",
+            lastUpdated: "Dec 20, 2024",
             sections: [
                 {
                     title: "Information We Don't Collect",
@@ -225,7 +225,7 @@ export const apps: AppType[] = [
             type: "one-time"
         },
         privacyPolicy: {
-            lastUpdated: "March 15, 2024",
+            lastUpdated: "Dec 20, 2024",
             sections: [
                 {
                     title: "Information We Don't Collect",

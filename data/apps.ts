@@ -9,9 +9,9 @@ export const apps: AppType[] = [
         name: "BarMarks",
         description: "Bookmarks in your Menu Bar.",
         color: "bg-[#FFE8E3]",
-        appStoreLink: "#",
-        linkText: "Coming Soon",
-        isReady: false,
+        appStoreLink: "https://apps.apple.com/az/app/barmarks/id6739710035?mt=12",
+        linkText: "Get on App Store",
+        isReady: true,
         icon: barMarksImage,
         slug: "barmarks",
         features: [
@@ -40,8 +40,9 @@ export const apps: AppType[] = [
         },
         screenshots: [], // Add screenshots when available
         pricing: {
-            price: "TBD",
-            type: "one-time"
+            price: "$4.99",
+            type: "one-time",
+            trial: "(can change depending on the region)"
         },
         privacyPolicy: {
             lastUpdated: "Dec 20, 2024",

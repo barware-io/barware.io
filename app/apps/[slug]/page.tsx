@@ -3,9 +3,9 @@ import { apps } from '@/data/apps'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
-import { Download } from "lucide-react"
 import Link from 'next/link'
 import { TestimonialsCarousel } from './TestimonialsCarousel'
+import downloadSvg from '@/public/assets/download.svg'
 
 type Props = {
   params: { slug: string }
@@ -63,12 +63,19 @@ export default function AppPage({ params }: Props) {
               <p className="text-lg mb-6">{app.description}</p>
               {app.isReady ? (
                 <Button 
-                  className="bg-[#0066CC] hover:bg-[#0066CC]/90 rounded-full"
+                  className="p-0 bg-transparent hover:bg-transparent rounded-none"
                   asChild
                 >
-                  <a href={app.appStoreLink} target="_blank" rel="noopener noreferrer">
-                    <Download className="mr-2 h-4 w-4" />
-                    Get on App Store
+                  <a 
+                    href={app.appStoreLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <Image 
+                      src={downloadSvg} 
+                      alt="Download on the Mac App Store"
+                      className="w-auto h-10"
+                    />
                   </a>
                 </Button>
               ) : (

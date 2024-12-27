@@ -34,8 +34,8 @@ export function TestimonialsCarousel({ testimonials }: { testimonials: Testimoni
                 <h3 className="text-2xl md:text-3xl font-semibold text-[#FF5D41] mb-4">
                   {testimonial.header}
                 </h3>
-                <p className="text-lg md:text-xl text-gray-800 mb-8 font-normal leading-relaxed">
-                  "{testimonial.content}"
+                <p className="text-2xl md:text-3xl text-gray-800 mb-8 font-normal leading-relaxed">
+                  &ldquo;{testimonial.content}&rdquo;
                 </p>
                 <div className="flex flex-col items-center gap-3">
                   <div>

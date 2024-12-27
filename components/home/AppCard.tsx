@@ -3,8 +3,8 @@
 import { AppType } from "@/types"
 import Image from "next/image"
 import { Button } from "../ui/button"
-import { Download } from "lucide-react"
 import Link from 'next/link'
+import downloadSvg from '@/public/assets/download.svg'
 
 export function AppCard({ app }: { app: AppType }) {
     if (!app) return null
@@ -24,10 +24,10 @@ export function AppCard({ app }: { app: AppType }) {
                     />
                 </div>
                 <h3 className="font-semibold text-lg mb-2">{app.name}</h3>
-                <p className="text-sm text-gray-600 mb-4 flex-grow">{app.description}</p>
+                <p className="text-sm text-gray-600 mb-8 flex-grow">{app.description}</p>
                 {app.isReady ? (
                     <Button 
-                        className="w-full bg-[#0066CC] hover:bg-[#0066CC]/90 rounded-full"
+                        className="w-full p-0 bg-transparent hover:bg-transparent rounded-none"
                         asChild
                         onClick={(e) => {
                             e.preventDefault()
@@ -35,8 +35,11 @@ export function AppCard({ app }: { app: AppType }) {
                         }}
                     >
                         <div>
-                            <Download className="mr-2 h-4 w-4" />
-                            Get on App Store
+                            <Image 
+                                src={downloadSvg} 
+                                alt="Download on the Mac App Store"
+                                className="w-auto h-10"
+                            />
                         </div>
                     </Button>
                 ) : (

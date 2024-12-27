@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { Download } from "lucide-react"
 import Link from 'next/link'
+import { TestimonialsCarousel } from './TestimonialsCarousel'
 
 type Props = {
   params: { slug: string }
@@ -119,6 +120,7 @@ export default function AppPage({ params }: Props) {
           </div>
         </section>
 
+        {/* Pricing Section */}
         {app.pricing && (
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-6">Pricing</h2>
@@ -136,6 +138,19 @@ export default function AppPage({ params }: Props) {
           </section>
         )}
 
+        {/* Testimonials Section */}
+        {app.testimonials && app.testimonials.length > 0 && (
+          <section className="mb-12">
+            <div className="container mx-auto px-4">
+              <h2 className="text-3xl font-bold text-center mb-16">What Users Say</h2>
+              <div className="bg-[#FFE8E3] rounded-3xl p-8 md:p-12">
+                <TestimonialsCarousel testimonials={app.testimonials} />
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Privacy Policy Link Section */}
         <section className="mb-12">
           <div className="flex justify-center">
             <Link 

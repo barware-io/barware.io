@@ -62,7 +62,44 @@ export const apps: AppType[] = [
                     ]
                 }
             ]
-        }
+        },
+        testimonials: [
+            {
+                content: "Simple yet powerful app which is easy to use, supports quick imports from Safari and Chrome, and is conveniently accessible right from the macOS menu bar. Highly recommend 🙌",
+                author: "MuradSofi",
+                rating: 5,
+                header: "Highly recommend",
+                source: "App Store Review"
+            },
+            {
+                content: "The app is fantastic! So many little features that are really well thought out... Categories and colors for clarity, a dark mode. Great! I love it!",
+                author: "webwrk",
+                rating: 5,
+                header: "The app you didn't know you needed",
+                source: "App Store Review"
+            },
+            {
+                content: "It's best bookmarks app I have ever seen.",
+                author: "FiruzcanHaciyev",
+                rating: 5,
+                header: "Awesome",
+                source: "App Store Review"
+            },
+            {
+                content: "Great app for organizing bookmarks! The clean UI and quick navigation make it efficient.",
+                author: "h.gerayzade",
+                rating: 5,
+                header: "Great!",
+                source: "App Store Review"
+            },
+            {
+                content: "Links that I use constantly I store here. Such a useful app.",
+                author: "BladeRoll",
+                rating: 5,
+                header: "Simple, yet much needed!",
+                source: "App Store Review"
+            }
+        ],
     },
     {
         name: "CatBar",
@@ -102,6 +139,7 @@ export const apps: AppType[] = [
             price: "Free",
             type: "one-time"
         },
+        testimonials: [],
         privacyPolicy: {
             lastUpdated: "Dec 20, 2024",
             sections: [
@@ -167,6 +205,7 @@ export const apps: AppType[] = [
             price: "TBD",
             type: "one-time"
         },
+        testimonials: [],
         privacyPolicy: {
             lastUpdated: "Dec 20, 2024",
             sections: [
@@ -225,6 +264,7 @@ export const apps: AppType[] = [
             price: "TBD",
             type: "one-time"
         },
+        testimonials: [],
         privacyPolicy: {
             lastUpdated: "Dec 20, 2024",
             sections: [

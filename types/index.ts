@@ -35,4 +35,13 @@ export type AppType = {
       content: string[]
     }[]
   }
+  testimonials: Testimonial[]
+}
+
+export interface Testimonial {
+  content: string;
+  author: string;
+  rating: number;
+  header: string;
+  source: string;
 } 

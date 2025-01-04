@@ -9,27 +9,59 @@ export const apps: AppType[] = [
         name: "BarMarks",
         description: "Bookmarks in your Menu Bar.",
         color: "bg-[#FFE8E3]",
-        appStoreLink: "https://apps.apple.com/az/app/barmarks/id6739710035?mt=12",
+        appStoreLink: "https://apps.apple.com/app/barmarks/id6739710035?mt=12",
         linkText: "Get on App Store",
         isReady: true,
         icon: barMarksImage,
         slug: "barmarks",
         features: [
             {
-                title: "Bookmark Management",
-                description: "Easily manage your bookmarks with a simple interface"
+                title: "Works Fully Offline",
+                description: "Access and manage your bookmarks without needing an internet connection."
             },
             {
-                title: "Quick Access",
-                description: "Access your bookmarks quickly from the menu bar"
+                title: "Privacy-Focused",
+                description: "Your data stays secure—no tracking or third-party access."
             },
             {
-                title: "Organize",
-                description: "Organize your bookmarks into categories for easy navigation"
+                title: "Drag & Drop Support",
+                description: "Save links instantly by dragging them to the menu bar icon."
             },
             {
-                title: "Customizable",
-                description: "Color code your bookmarks to make them easier to identify"
+                title: "Seamless Bookmark Import",
+                description: "Effortlessly import your bookmarks from Safari or Chrome."
+            },
+            {
+                title: "Auto Sync Bookmarks",
+                description: "Automatically fetch and sync bookmarks from Safari and Chrome at your set interval."
+            },
+            {
+                title: "Menu Bar Quick Access",
+                description: "Access your favorite bookmarks instantly from the macOS menu bar."
+            },
+            {
+                title: "Custom Categories & Tags",
+                description: "Personalize your bookmarks with categories and tags for quick access."
+            },
+            {
+                title: "Powerful Search & Filtering",
+                description: "Find bookmarks in seconds with advanced search."
+            },
+            {
+                title: "Browser Assignment",
+                description: "Open bookmarks in the browser of your choice for ultimate flexibility."
+            },
+            {
+                title: "Export as JSON",
+                description: "Save bookmarks as a JSON file for backups or custom use cases."
+            },
+            {
+                title: "Color Coding",
+                description: "Use colors to visually organize and distinguish bookmarks."
+            },
+            {
+                title: "Lightweight & Beautiful Design",
+                description: "A sleek, minimalist app that blends seamlessly with macOS."
             }
         ],
         requirements: {

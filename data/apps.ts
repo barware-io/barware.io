@@ -2,9 +2,92 @@ import catBarImage from '@/public/assets/catbar.png'
 import dogBarImage from '@/public/assets/dogbar.png'
 import barMarksImage from '@/public/assets/barmarks.png'
 import barTactoeImage from '@/public/assets/bartactoe.png'
+import reddBarImage from '@/public/assets/reddbar.png'
 import { AppType } from '@/types'
 
 export const apps: AppType[] = [
+    {
+        name: "ReddBar",
+        description: "A Read-Only Reddit Client for Your Mac's Menu Bar.",
+        color: "bg-[#FFD1D1]",
+        appStoreLink: "#",
+        linkText: "Coming Soon",
+        isReady: false,
+        icon: reddBarImage,
+        slug: "reddbar",
+        features: [
+            {
+                title: "Read-only experience",
+                description: "No login or signup needed."
+            },
+            {
+                title: "Minimalist menu bar design",
+                description: "Access Reddit anytime, without opening a browser."
+            },
+            {
+                title: "Customize your subreddits",
+                description: "Add your favorite communities for quick access (Free: up to 3 subreddits)."
+            },
+            {
+                title: "Basic sorting",
+                description: "Browse by hot and new posts in the free version."
+            },
+            {
+                title: "Pro: Unlimited subreddits",
+                description: "Add and browse as many subreddits as you want."
+            },
+            {
+                title: "Pro: Advanced sorting",
+                description: "Sort posts by hot, new, top, rising, and more."
+            },
+            {
+                title: "Pro: Unlimited refreshes",
+                description: "Refresh your feed as often as you like."
+            },
+            {
+                title: "Pro: Unlimited scroll",
+                description: "Keep scrolling through posts without any limitations."
+            }
+        ],
+        requirements: {
+            os: "macOS 13.0 or later",
+            processor: "Apple Silicon or Intel processor",
+            memory: "50 MB",
+            storage: "50 MB available space"
+        },
+        screenshots: [],
+        pricing: {
+            price: "Free",
+            type: "one-time",
+            trial: "Pro version available for $5.99"
+        },
+        privacyPolicy: {
+            lastUpdated: "Dec 20, 2024",
+            sections: [
+                {
+                    title: "Information We Don't Collect",
+                    content: [
+                        "ReddBar does not collect, store, or transmit any personal information.",
+                        "All data is stored locally on your device.",
+                        "We have no access to any information about your usage of the app."
+                    ]
+                },
+                {
+                    title: "Third-Party Services",
+                    content: [
+                        "ReddBar may utilize third-party APIs for the latest news feeds. Your interactions with these services are subject to their respective privacy policies."
+                    ]
+                },
+                {
+                    title: "Changes to This Policy",
+                    content: [
+                        "We may update our privacy policy periodically. Any changes will be posted on this page."
+                    ]
+                }
+            ]
+        },
+        testimonials: []
+    },
     {
         name: "BarMarks",
         description: "Bookmarks in your Menu Bar.",
@@ -257,75 +340,18 @@ export const apps: AppType[] = [
                 }
             ]
         }
-    },
-    {
-        name: "BarTacToe",
-        description: "Challenge the computer to a game of Tic-Tac-Toe in your Menu Bar.",
-        color: "bg-[#FFE8E3]",
-        appStoreLink: "#",
-        linkText: "Coming Soon",
-        isReady: false,
-        icon: barTactoeImage,
-        slug: "bartactoe",
-        features: [
-            {
-                title: "Classic Game",
-                description: "Play the classic game of Tic-Tac-Toe in your menu bar"
-            },
-            {
-                title: "Challenge",
-                description: "Challenge the computer to a game of Tic-Tac-Toe"
-            },
-            {
-                title: "Minimal Design",
-                description: "Clean and simple interface that stays out of your way"
-            },
-            {
-                title: "Fun",
-                description: "Enjoy the fun of Tic-Tac-Toe in your menu bar"
-            }
-        ],
-        requirements: {
-            os: "macOS 13.0 or later",
-            processor: "Apple Silicon or Intel processor",
-            memory: "50 MB",
-            storage: "50 MB available space"
-        },
-        screenshots: [], // Add screenshots when available
-        pricing: {
-            price: "TBD",
-            type: "one-time"
-        },
-        testimonials: [],
-        privacyPolicy: {
-            lastUpdated: "Dec 20, 2024",
-            sections: [
-                {
-                    title: "Information We Don't Collect",
-                    content: [
-                        "BarTacToe does not collect, store, or transmit any personal information.",
-                        "All data is stored locally on your device.",
-                        "We have no access to any information about your usage of the app."
-                    ]
-                },
-                {
-                    title: "Changes to This Policy",
-                    content: [
-                        "We may update this privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page."
-                    ]
-                }
-            ]
-        }
-    },
+    }
 ]
 
-export const favApps = apps.map(app => ({
-    name: app.name,
-    description: app.description,
-    color: app.color,
-    appStoreLink: app.appStoreLink,
-    linkText: app.linkText,
-    isReady: app.isReady,
-    icon: app.icon,
-    slug: app.slug
-})) 
+export const favApps = apps
+    .slice(0, 4) // Only take the first 4 apps
+    .map(app => ({
+        name: app.name,
+        description: app.description,
+        color: app.color,
+        appStoreLink: app.appStoreLink,
+        linkText: app.linkText,
+        isReady: app.isReady,
+        icon: app.icon,
+        slug: app.slug
+    })) 

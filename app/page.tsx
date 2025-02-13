@@ -3,8 +3,6 @@ import { HeroSection } from "@/components/home/HeroSection"
 import { AppShowcase } from "@/components/home/AppShowcase"
 import { Features } from "@/components/home/Features"
 import { About } from "@/components/home/About"
-import { Header } from "@/components/layout/Header"
-import { Footer } from "@/components/layout/Footer"
 import { favApps } from "@/data/apps"
 
 export const metadata: Metadata = {
@@ -19,12 +17,10 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#FDFCFC]">
-      <Header />
       <HeroSection favApps={favApps} />
       <Features />
       <AppShowcase />
       <About />
-      <Footer />
     </div>
   )
 }

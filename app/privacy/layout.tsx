@@ -8,9 +8,7 @@ export default function PrivacyLayout({
 }) {
   return (
     <div className="min-h-screen bg-[#FDFCFC]">
-      <Header />
       {children}
-      <Footer />
     </div>
   )
 } 

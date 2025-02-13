@@ -1,5 +1,7 @@
 import { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Header } from '@/components/layout/Header'
+import { Footer } from '@/components/layout/Footer'
 import '../styles/globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -84,7 +86,11 @@ export default function RootLayout({
         <link rel="manifest" href="/assets/favicon/site.webmanifest" />
       </head>
       <body className={inter.className}>
-        {children}
+        <div className="min-h-screen bg-[#FDFCFC]">
+          <Header />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   )

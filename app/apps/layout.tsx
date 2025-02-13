@@ -8,9 +8,7 @@ export default function AppsLayout({
 }) {
   return (
     <div className="min-h-screen bg-[#FDFCFC]">
-      <Header />
       {children}
-      <Footer />
     </div>
   )
 } 

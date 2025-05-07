@@ -1,6 +1,3 @@
-import { Header } from "@/components/layout/Header"
-import { Footer } from "@/components/layout/Footer"
-
 export default function Terms() {
   return (
     <div className="container mx-auto py-8 px-4 max-w-4xl">

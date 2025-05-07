@@ -1,7 +1,6 @@
 import catBarImage from '@/public/assets/catbar.png'
 import dogBarImage from '@/public/assets/dogbar.png'
 import barMarksImage from '@/public/assets/barmarks.png'
-import barTactoeImage from '@/public/assets/bartactoe.png'
 import reddBarImage from '@/public/assets/reddbar.png'
 import { AppType } from '@/types'
 
@@ -10,9 +9,9 @@ export const apps: AppType[] = [
         name: "ReddBar",
         description: "A Read-Only Reddit Client for Your Mac's Menu Bar.",
         color: "bg-[#FFD1D1]",
-        appStoreLink: "#",
-        linkText: "Coming Soon",
-        isReady: false,
+        appStoreLink: "https://apps.apple.com/us/app/reddbar-menu-bar-feeds/id6739960301?mt=12",
+        linkText: "Get on App Store",
+        isReady: true,
         icon: reddBarImage,
         slug: "reddbar",
         features: [
@@ -59,7 +58,7 @@ export const apps: AppType[] = [
         pricing: {
             price: "Free",
             type: "one-time",
-            trial: "Pro version available for $5.99"
+            trial: "Pro version available for $3.99 (can change depending on the region)"
         },
         privacyPolicy: {
             lastUpdated: "Dec 20, 2024",

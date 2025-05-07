@@ -1,5 +1,3 @@
-import { Header } from "@/components/layout/Header"
-import { Footer } from "@/components/layout/Footer"
 import { AppCard } from "@/components/home/AppCard"
 import { apps } from "@/data/apps"
 import { Metadata } from 'next'

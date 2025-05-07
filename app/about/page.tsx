@@ -1,5 +1,3 @@
-import { Header } from "@/components/layout/Header"
-import { Footer } from "@/components/layout/Footer"
 import { Mail } from 'lucide-react'
 import Link from "next/link"
 

@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: '%s | Barware.io'
   },
   description: 'Menu bar apps for your Mac',
-  keywords: ['barware', 'barware.io', 'menu bar apps', 'mac apps', 'macos', 'menubar'],
+  keywords: ['mac', 'apple', 'menu', 'bar', 'app', 'utility', 'productivity', 'reddit', 'subreddit', 'bookmark', 'feeds', 'menu bar apps', 'mac apps', 'macos', 'menubar', 'barware', 'barware.io',],
   authors: [{ name: 'Orkhan Farmanli' }],
   creator: 'Orkhan Farmanli',
   publisher: 'Orkhan Farmanli',

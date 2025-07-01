@@ -2,7 +2,7 @@
 
 import Image, { StaticImageData } from "next/image"
 import Link from 'next/link'
-import { motion } from "framer-motion"
+import { motion, useMotionValue } from "framer-motion"
 
 type SimplifiedAppType = {
   name: string
@@ -16,6 +16,17 @@ type SimplifiedAppType = {
 }
 
 export function HeroSection({ favApps }: { favApps: SimplifiedAppType[] }) {
+    const x = useMotionValue(0)
+    const y = useMotionValue(0)
+
+    function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+        const rect = e.currentTarget.getBoundingClientRect()
+        const offsetX = e.clientX - rect.left - rect.width / 2
+        const offsetY = e.clientY - rect.top - rect.height / 2
+        x.set(offsetX / 20)
+        y.set(offsetY / 20)
+    }
+
     return (
         <section className="relative py-16 md:py-24 overflow-hidden bg-[#FFE1D8]">
             {/* Enhanced background gradient */}
@@ -49,7 +60,10 @@ export function HeroSection({ favApps }: { favApps: SimplifiedAppType[] }) {
 
                     {/* App Showcase */}
                     <div className="relative">
-                        <motion.div 
+                        <motion.div
+                            onMouseMove={handleMouseMove}
+                            onMouseLeave={() => { x.set(0); y.set(0) }}
+                            style={{ x, y }}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.5 }}

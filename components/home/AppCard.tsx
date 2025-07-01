@@ -12,8 +12,8 @@ export function AppCard({ app }: { app: AppType }) {
     return (
         <Link href={`/apps/${app.slug}`} className="block h-full">
             <div
-                className={`relative bg-white/20 backdrop-blur-lg p-8 rounded-3xl shadow-lg
-                    border border-white/30 hover:scale-105 transition-transform h-full flex flex-col`}
+                className={`relative bg-white p-8 rounded-3xl shadow-xl backdrop-blur-sm 
+                    hover:scale-105 transition-transform h-full flex flex-col`}
             >
                 <div className="relative w-16 h-16 mb-4">
                     <Image
@@ -23,8 +23,8 @@ export function AppCard({ app }: { app: AppType }) {
                         className="object-contain"
                     />
                 </div>
-                <h3 className="font-semibold text-lg mb-2 text-white">{app.name}</h3>
-                <p className="text-sm text-white/80 mb-8 flex-grow">{app.description}</p>
+                <h3 className="font-semibold text-lg mb-2">{app.name}</h3>
+                <p className="text-sm text-gray-600 mb-8 flex-grow">{app.description}</p>
                 {app.isReady ? (
                     <Button 
                         className="w-full p-0 bg-transparent hover:bg-transparent rounded-none"

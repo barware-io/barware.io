@@ -1,12 +1,15 @@
 import { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 import './globals.css'
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import { GoogleAnalytics } from "@/components/GoogleAnalytics"
 import '../styles/globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '600', '700']
+})
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -87,7 +90,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png" />
         <link rel="manifest" href="/assets/favicon/site.webmanifest" />
       </head>
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <GoogleAnalytics />
         <div className="min-h-screen bg-[#FDFCFC]">
           <Header />

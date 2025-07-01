@@ -17,9 +17,8 @@ type SimplifiedAppType = {
 
 export function HeroSection({ favApps }: { favApps: SimplifiedAppType[] }) {
     return (
-        <section className="relative py-16 md:py-24 overflow-hidden bg-[#FFE1D8]">
-            {/* Enhanced background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#FFE1D8] via-[#FFE8E3] to-[#FFF5F2]"></div>
+        <section className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 text-white">
+            <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.3),transparent)]"></div>
             
             <div className="container mx-auto px-4 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -30,21 +29,22 @@ export function HeroSection({ favApps }: { favApps: SimplifiedAppType[] }) {
                         transition={{ duration: 0.5, ease: "easeOut" }}
                         className="space-y-6"
                     >
-                        <h1 className="text-4xl lg:text-6xl font-bold tracking-tight">
+                        <h1 className="text-5xl lg:text-7xl font-bold tracking-tight">
                             Pouring Innovation
-                            <motion.span 
+                            <motion.span
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.3, duration: 0.5 }}
-                                className="text-[#FF5D41] block"
+                                className="text-yellow-300 block"
                             >
                                 into MacOS.
                             </motion.span>
                         </h1>
-                        <p className="text-gray-600 text-lg max-w-lg">
-                            Discover our collection of beautifully crafted menu bar apps 
+                        <p className="text-lg max-w-lg text-white/90">
+                            Discover our collection of beautifully crafted menu bar apps
                             that enhance your Mac experience.
                         </p>
+                        <Link href="#apps" className="inline-block bg-white text-indigo-700 font-semibold px-6 py-3 rounded-full shadow mt-4 hover:bg-gray-100">Explore Apps</Link>
                     </motion.div>
 
                     {/* App Showcase */}

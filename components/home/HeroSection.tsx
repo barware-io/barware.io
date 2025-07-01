@@ -2,7 +2,7 @@
 
 import Image, { StaticImageData } from "next/image"
 import Link from 'next/link'
-import { motion, useMotionValue } from "framer-motion"
+import { motion, useMotionValue, useTransform } from "framer-motion"
 
 type SimplifiedAppType = {
   name: string
@@ -16,21 +16,34 @@ type SimplifiedAppType = {
 }
 
 export function HeroSection({ favApps }: { favApps: SimplifiedAppType[] }) {
-    const x = useMotionValue(0)
-    const y = useMotionValue(0)
+    const highlightX = useMotionValue(50)
+    const highlightY = useMotionValue(50)
+    const highlight = useTransform([highlightX, highlightY], ([x, y]) =>
+        `radial-gradient(circle at ${x}% ${y}%, rgba(255,255,255,0.4), transparent 60%)`
+    )
 
-    function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+    function handleBackgroundMove(e: React.MouseEvent<HTMLDivElement>) {
         const rect = e.currentTarget.getBoundingClientRect()
-        const offsetX = e.clientX - rect.left - rect.width / 2
-        const offsetY = e.clientY - rect.top - rect.height / 2
-        x.set(offsetX / 20)
-        y.set(offsetY / 20)
+        const x = ((e.clientX - rect.left) / rect.width) * 100
+        const y = ((e.clientY - rect.top) / rect.height) * 100
+        highlightX.set(x)
+        highlightY.set(y)
+    }
+
+    function resetBackground() {
+        highlightX.set(50)
+        highlightY.set(50)
     }
 
     return (
-        <section className="relative py-16 md:py-24 overflow-hidden bg-[#FFE1D8]">
+        <section
+            onMouseMove={handleBackgroundMove}
+            onMouseLeave={resetBackground}
+            className="relative py-16 md:py-24 overflow-hidden bg-[#FFE1D8]"
+        >
             {/* Enhanced background gradient */}
             <div className="absolute inset-0 bg-gradient-to-b from-[#FFE1D8] via-[#FFE8E3] to-[#FFF5F2]"></div>
+            <motion.div className="absolute inset-0" style={{ background: highlight }} />
             
             <div className="container mx-auto px-4 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -61,9 +74,6 @@ export function HeroSection({ favApps }: { favApps: SimplifiedAppType[] }) {
                     {/* App Showcase */}
                     <div className="relative">
                         <motion.div
-                            onMouseMove={handleMouseMove}
-                            onMouseLeave={() => { x.set(0); y.set(0) }}
-                            style={{ x, y }}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.5 }}

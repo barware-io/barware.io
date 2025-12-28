@@ -1,5 +1,19 @@
+import { Metadata } from 'next'
 import { Button } from "@/components/ui/button"
 import { Mail } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'Contact Us',
+  description: 'Get in touch with the Barware team. Have questions, feedback, or need support for our Mac menu bar apps? We would love to hear from you.',
+  alternates: {
+    canonical: 'https://barware.io/contact'
+  },
+  openGraph: {
+    title: 'Contact Barware.io',
+    description: 'Get in touch with the Barware team for support or feedback.',
+    url: 'https://barware.io/contact'
+  }
+}
 
 export default function Contact() {
   return (

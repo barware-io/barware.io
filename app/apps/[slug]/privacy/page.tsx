@@ -3,6 +3,8 @@ import { apps } from '@/data/apps'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { ChevronLeft } from 'lucide-react'
+import { JsonLd } from '@/components/JsonLd'
+import { generateBreadcrumbSchema } from '@/lib/structured-data'
 
 type Props = {
   params: { slug: string }
@@ -16,7 +18,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const app = apps.find(app => app.slug === params.slug)
-  
+
   if (!app) {
     return {
       title: 'Privacy Policy Not Found',
@@ -26,7 +28,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${app.name} Privacy Policy`,
-    description: `Privacy Policy for ${app.name} - Menu Bar App`,
+    description: `Privacy Policy for ${app.name} - how we handle your data and protect your privacy.`,
+    alternates: {
+      canonical: `https://barware.io/apps/${app.slug}/privacy`
+    }
   }
 }
 
@@ -37,8 +42,17 @@ export default function PrivacyPolicyPage({ params }: Props) {
     notFound()
   }
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: 'https://barware.io' },
+    { name: 'Apps', url: 'https://barware.io/apps' },
+    { name: app.name, url: `https://barware.io/apps/${app.slug}` },
+    { name: 'Privacy Policy', url: `https://barware.io/apps/${app.slug}/privacy` }
+  ])
+
   return (
-    <main className="container mx-auto px-4 py-16">
+    <>
+      <JsonLd data={breadcrumbSchema} />
+      <main className="container mx-auto px-4 py-16">
       <div className="max-w-3xl mx-auto">
         <Link 
           href={`/apps/${app.slug}`}
@@ -79,5 +93,6 @@ export default function PrivacyPolicyPage({ params }: Props) {
         </div>
       </div>
     </main>
+    </>
   )
 } 

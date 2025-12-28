@@ -3,7 +3,10 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy - Barware',
-  description: 'Privacy Policy for Barware and our menu bar apps',
+  description: 'Privacy Policy for Barware and our menu bar apps. We believe in absolute privacy - we do not collect, store, or process any personal information.',
+  alternates: {
+    canonical: 'https://barware.io/privacy'
+  }
 }
 
 export default function PrivacyPage() {

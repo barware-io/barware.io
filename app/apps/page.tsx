@@ -5,9 +5,13 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Apps | Barware.io',
   description: 'Discover our collection of useful menu bar apps for your Mac. Simple, efficient tools that live in your menubar.',
+  alternates: {
+    canonical: 'https://barware.io/apps'
+  },
   openGraph: {
     title: 'Mac Menu Bar Apps | Barware.io',
     description: 'Discover our collection of useful menu bar apps for your Mac. Simple, efficient tools that live in your menubar.',
+    url: 'https://barware.io/apps'
   }
 }
 

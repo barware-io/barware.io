@@ -1,5 +1,19 @@
+import { Metadata } from 'next'
 import { Mail } from 'lucide-react'
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: 'About Us',
+  description: 'Learn about Barware - the team behind innovative macOS menu bar applications. Founded in 2024, we create intuitive tools for Mac users.',
+  alternates: {
+    canonical: 'https://barware.io/about'
+  },
+  openGraph: {
+    title: 'About Barware.io',
+    description: 'Learn about Barware - the team behind innovative macOS menu bar applications.',
+    url: 'https://barware.io/about'
+  }
+}
 
 export default function About() {
   return (

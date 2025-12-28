@@ -1,3 +1,13 @@
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Terms and Conditions',
+  description: 'Terms and Conditions for using Barware services and macOS applications. Read about our policies on usage, pricing, and liability.',
+  alternates: {
+    canonical: 'https://barware.io/terms'
+  }
+}
+
 export default function Terms() {
   return (
     <div className="container mx-auto py-8 px-4 max-w-4xl">

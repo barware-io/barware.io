@@ -4,30 +4,11 @@ import './globals.css'
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import { GoogleAnalytics } from "@/components/GoogleAnalytics"
+import { JsonLd } from "@/components/JsonLd"
+import { generateWebsiteSchema, generateOrganizationSchema } from "@/lib/structured-data"
 import '../styles/globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
-
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'Barware.io',
-  url: 'https://barware.io',
-  description: 'Menu bar apps for your Mac',
-  author: {
-    '@type': 'Person',
-    name: 'Orkhan Farmanli'
-  },
-  publisher: {
-    '@type': 'Person',
-    name: 'Orkhan Farmanli'
-  },
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: 'https://barware.io/apps?q={search_term_string}',
-    'query-input': 'required name=search_term_string'
-  }
-}
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://barware.io'),
@@ -67,9 +48,6 @@ export const metadata: Metadata = {
     creator: '@orkhanfarmanli',
     images: ['https://barware.io/assets/og-image.png'],
   },
-  other: {
-    'schema:jsonLd': JSON.stringify(jsonLd)
-  },
   alternates: {
     canonical: 'https://barware.io'
   }
@@ -80,9 +58,14 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const websiteSchema = generateWebsiteSchema()
+  const organizationSchema = generateOrganizationSchema()
+
   return (
     <html lang="en">
       <head>
+        <JsonLd data={websiteSchema} />
+        <JsonLd data={organizationSchema} />
         <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png" />
         <link rel="manifest" href="/assets/favicon/site.webmanifest" />

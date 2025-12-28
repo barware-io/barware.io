@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import Link from 'next/link'
 import { TestimonialsCarousel } from './TestimonialsCarousel'
+import { JsonLd } from '@/components/JsonLd'
+import { generateSoftwareApplicationSchema, generateBreadcrumbSchema } from '@/lib/structured-data'
 import downloadSvg from '@/public/assets/download.svg'
 
 type Props = {
@@ -19,7 +21,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const app = apps.find(app => app.slug === params.slug)
-  
+
   if (!app) {
     return {
       title: 'App Not Found',
@@ -30,9 +32,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${app.name} - Menu Bar App`,
     description: app.description,
+    alternates: {
+      canonical: `https://barware.io/apps/${app.slug}`
+    },
     openGraph: {
       title: `${app.name} - Mac Menu Bar App`,
       description: app.description,
+      url: `https://barware.io/apps/${app.slug}`,
     },
   }
 }
@@ -44,8 +50,18 @@ export default function AppPage({ params }: Props) {
     notFound()
   }
 
+  const softwareAppSchema = generateSoftwareApplicationSchema(app)
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: 'https://barware.io' },
+    { name: 'Apps', url: 'https://barware.io/apps' },
+    { name: app.name, url: `https://barware.io/apps/${app.slug}` }
+  ])
+
   return (
-    <main className="container mx-auto px-4 py-16">
+    <>
+      <JsonLd data={softwareAppSchema} />
+      <JsonLd data={breadcrumbSchema} />
+      <main className="container mx-auto px-4 py-16">
       <div className="max-w-4xl mx-auto">
         {/* Hero Section */}
         <div className={`rounded-3xl ${app.color} p-8 mb-12`}>
@@ -183,5 +199,6 @@ export default function AppPage({ params }: Props) {
         </section>
       </div>
     </main>
+    </>
   )
 } 

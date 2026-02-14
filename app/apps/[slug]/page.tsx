@@ -10,7 +10,7 @@ import { generateSoftwareApplicationSchema, generateBreadcrumbSchema } from '@/l
 import downloadSvg from '@/public/assets/download.svg'
 
 type Props = {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 export function generateStaticParams() {
@@ -20,7 +20,8 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const app = apps.find(app => app.slug === params.slug)
+  const { slug } = await params
+  const app = apps.find(app => app.slug === slug)
 
   if (!app) {
     return {
@@ -43,8 +44,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default function AppPage({ params }: Props) {
-  const app = apps.find(app => app.slug === params.slug)
+export default async function AppPage({ params }: Props) {
+  const { slug } = await params
+  const app = apps.find(app => app.slug === slug)
 
   if (!app) {
     notFound()

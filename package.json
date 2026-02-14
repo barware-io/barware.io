@@ -7,7 +7,7 @@
     "build": "tsx scripts/generate-sitemap.ts && next build",
     "start": "next start",
     "export": "next build",
-    "lint": "next lint",
+    "lint": "eslint .",
     "deploy": "gh-pages -d out"
   },
   "dependencies": {
@@ -18,17 +18,17 @@
     "framer-motion": "^11.15.0",
     "lucide-react": "^0.468.0",
     "next": "^16.1.6",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^19",
+    "react-dom": "^19",
     "sharp": "^0.33.5",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
     "eslint-config-next": "^16.1.6",
     "gh-pages": "^6.2.0",
     "postcss": "^8",

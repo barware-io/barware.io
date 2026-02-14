@@ -7,7 +7,7 @@ import { JsonLd } from '@/components/JsonLd'
 import { generateBreadcrumbSchema } from '@/lib/structured-data'
 
 type Props = {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 export function generateStaticParams() {
@@ -17,7 +17,8 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const app = apps.find(app => app.slug === params.slug)
+  const { slug } = await params
+  const app = apps.find(app => app.slug === slug)
 
   if (!app) {
     return {
@@ -35,8 +36,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default function PrivacyPolicyPage({ params }: Props) {
-  const app = apps.find(app => app.slug === params.slug)
+export default async function PrivacyPolicyPage({ params }: Props) {
+  const { slug } = await params
+  const app = apps.find(app => app.slug === slug)
 
   if (!app) {
     notFound()
